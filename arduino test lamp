@@ -1,0 +1,20 @@
+const int lampPin = 13; // Пин, к которому подключена лампочка
+const int sensorPin = A0; // Пин, к которому подключен датчик
+
+void setup() {
+  pinMode(lampPin, OUTPUT);
+  pinMode(sensorPin, INPUT);
+}
+
+void loop() {
+  int sensorValue = analogRead(sensorPin);
+
+  // Проверяем значение с датчика
+  if (sensorValue > 500) {
+    digitalWrite(lampPin, HIGH); // Включаем лампочку
+  } else {
+    digitalWrite(lampPin, LOW); // Выключаем лампочку
+  }
+
+  delay(1000); // Пауза 1 секунда между проверками
+}
